@@ -7,11 +7,15 @@ import { NavController,AlertController,LoadingController } from '@ionic/angular'
   styleUrls: ['./control.page.scss'],
 })
 export class ControlPage implements OnInit {
- nombre=null;
- descripcion=null;
- valor=null;
- fecha=null;
-
+ nombre="";
+ descripcion="";
+ valor="";
+ fecha="";
+ nombre1="";
+ descripcion1="";
+ valor1="";
+ fecha1="";
+ clave1=" ";
  ingresos=[];
  gastos=[];
 sinDatos:boolean=false;
@@ -19,7 +23,9 @@ sinDatos:boolean=false;
   constructor(private storage: Storage, public alertController: AlertController, loadingController: LoadingController) { }
 
 async ngOnInit(){
-    
+    await this.storage.create( ) 
+    this.ingresos=await this.storage.get('ingresos')//base de datos
+    this.gastos=await this.storage.get('gastos')
   }
 
 
@@ -31,7 +37,7 @@ async ngOnInit(){
         {
           name: 'nombre',
           type: 'text',
-         
+          
           placeholder: 'nombre'
           
         },
@@ -85,25 +91,17 @@ async ngOnInit(){
     await alert.present();
   }*/
 
-
-
   async guardarGastos(i){
+    if(this.gastos==null){
+      this.gastos=[]
+    }
     this.gastos.push({
-      nombre: this.nombre
-      
-    })
-  
-    this.gastos.push({
-      descripcion: this.descripcion
-    })
-  
-    this.gastos.push({
-      valor: this.valor
-    })
-  
-    this.gastos.push({
+      nombre: this.nombre,
+      descripcion: this.descripcion,
+      valor: this.valor,
       fecha: this.fecha
     })
+    await this.storage.set('gastos',this.gastos)
     this.sinDatos=true;
     //limpiando datos
     this.valor="";
@@ -111,33 +109,30 @@ async ngOnInit(){
     this.nombre="";
     this.descripcion="";
    
-  console.log("guardando gastos");
+  console.log(this.gastos);
     
     }
-    guardarIngresos(x){
+
+ 
+   async guardarIngresos(x){
+    if(this.ingresos==null){
+      this.ingresos=[]
+    }
       this.ingresos.push({
-        nombre: this.nombre
-        
+        nombre: this.nombre = this.nombre1,
+        descripcion: this.descripcion = this.nombre1,
+        valor: this.valor = this.nombre1,
+        fecha: this.fecha = this.nombre1
       })
-    
-      this.ingresos.push({
-        descripcion: this.descripcion
-      })
-    
-      this.ingresos.push({
-        valor: this.valor
-      })
-    
-      this.ingresos.push({
-        fecha: this.fecha
-      })
+      await this.storage.set('ingresos',this.ingresos)
+
       this.sinDatos=true;
     //limpiando datos
-    this.valor="";
-    this.fecha="";
-    this.nombre="";
-    this.descripcion="";
-    console.log("guardando ingresos");
+    this.valor1="";
+    this.fecha1="";
+    this.nombre1="";
+    this.descripcion1="";
+    console.log(this.ingresos);
       
     }
 }
