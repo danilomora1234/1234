@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><ion-button color="warning" routerLink="/home"><ion-icon name="home"></ion-icon></ion-button>STORAGE</ion-title>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p>el texto guardado en la base de datos es:{{textoAlmacenado}}</p>
+<ion-item>
+  <ion-textarea [(ngModel)]="textoAlmacenado" placeholder="escribe algo"></ion-textarea>
+  <ion-button (click)="guardarDato()" color="success">guardar</ion-button>
+
+</ion-item>
+</ion-content>

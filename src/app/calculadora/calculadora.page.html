@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title><ion-button color="warning" routerLink="/iniciooperaciones"><ion-icon name="home"></ion-icon></ion-button>calculadora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating"><ion-icon></ion-icon>numero 1:</ion-label>
+    <ion-input [(ngModel)]="numero1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating"><ion-icon></ion-icon>ingrese simbolo de operacion:</ion-label>
+    <ion-input [(ngModel)]="simbolo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating"><ion-icon></ion-icon>numero 2:</ion-label>
+    <ion-input [(ngModel)]="numero2"></ion-input>
+  </ion-item>
+
+  <ion-button color="warning" (click)="guardar()">
+    <ion-icon name="calculator"></ion-icon> calcular
+  </ion-button>
+
+  <ion-item >
+    
+   El resultado de la suma es:{{suma}}
+  </ion-item>
+
+  <ion-item >
+    El resultado de la resta es:{{resta}}
+  </ion-item>
+  
+  <ion-item >
+    El resultado de la multiplicacion es:{{multi}} 
+  </ion-item>
+
+  <ion-item >
+    El resultado de la division es:{{division}}
+  </ion-item>
+    
+   
+</ion-content>

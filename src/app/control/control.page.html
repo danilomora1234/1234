@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="warning" routerLink="/home"><ion-icon name="home"></ion-icon></ion-button>CONTROL
+  </ion-toolbar>
+</ion-header>
+
+
+     
+<ion-content>
+
+  <!--<p> INGRESOS Y GASTOS</p>
+
+  <ion-button color="danger"  >AÑADIR GASTOS<ion-icon name="trending-down-outline"></ion-icon></ion-button>
+  <ion-button color="success"  (click)="anadirIngresos()">AÑADIR INGRESOS<ion-icon name="trending-up-outline"></ion-icon></ion-button>
+  
+  <ion-list>
+    <ion-item *ngFor="let ingreso of ingresos; let x= index">
+      {{ingresos.nombre}}
+      {{ingresos.descripcion}}
+      {{ingresos.fecha}}
+      {{ingresos.valor}}
+      
+    </ion-item>
+  </ion-list> -->
+  
+  <ion-item>
+    <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>NOMBRE:</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>DESCRIPCION:</ion-label>
+    <ion-input [(ngModel)]="descripcion"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>FECHA:</ion-label>
+    <ion-input [(ngModel)]="fecha">dd/mm/nnn</ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating"><ion-icon name="cash-outline"></ion-icon>VALOR:</ion-label>
+    <ion-input [(ngModel)]="valor"></ion-input>
+    
+  </ion-item>
+  
+  <ion-button color="danger"  (click)="guardarGastos()">guardar Gastos<ion-icon name="save"></ion-icon></ion-button>
+
+  <ion-button color="success"  (click)="guardarIngresos()">guardar Ingresos<ion-icon name="save"></ion-icon></ion-button>
+<ion-list>
+  <ion-item >
+    {{ingresos.nombre}}
+    {{ingresos.descripcion}}
+    {{ingresos.fecha}}
+    {{ingresos.valor}}
+   
+  </ion-item>
+</ion-list>
+</ion-content>
