@@ -101,7 +101,9 @@ async ngOnInit(){
       valor: this.valor,
       fecha: this.fecha
     })
+    
     await this.storage.set('gastos',this.gastos)
+   
     this.sinDatos=true;
     //limpiando datos
     this.valor="";
@@ -110,7 +112,7 @@ async ngOnInit(){
     this.descripcion="";
    
   console.log(this.gastos);
-    
+  
     }
 
  
@@ -119,10 +121,10 @@ async ngOnInit(){
       this.ingresos=[]
     }
       this.ingresos.push({
-        nombre: this.nombre = this.nombre1,
-        descripcion: this.descripcion = this.nombre1,
-        valor: this.valor = this.nombre1,
-        fecha: this.fecha = this.nombre1
+        nombre: this.nombre1 = this.nombre,
+        descripcion: this.descripcion1 = this.descripcion,
+        valor: this.valor1 = this.valor,
+        fecha: this.fecha1 = this.fecha
       })
       await this.storage.set('ingresos',this.ingresos)
 
@@ -133,6 +135,9 @@ async ngOnInit(){
     this.nombre1="";
     this.descripcion1="";
     console.log(this.ingresos);
+    console.log('INGRESOS');
       
     }
+
+    
 }

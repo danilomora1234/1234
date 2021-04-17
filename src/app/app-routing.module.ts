@@ -43,6 +43,14 @@ const routes: Routes = [
     path: 'control',
     loadChildren: () => import('./control/control.module').then( m => m.ControlPageModule)
   },
+  {
+    path: 'listgastos',
+    loadChildren: () => import('./listgastos/listgastos.module').then( m => m.ListgastosPageModule)
+  },
+  {
+    path: 'listingresos',
+    loadChildren: () => import('./listingresos/listingresos.module').then( m => m.ListingresosPageModule)
+  },
 ];
 
 @NgModule({

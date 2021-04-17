@@ -30,13 +30,13 @@
   </ion-item>
   
   <ion-item>
-    <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>DESCRIPCION:</ion-label>
+    <ion-label position="floating"><ion-icon name="reader-outline"></ion-icon>DESCRIPCION:</ion-label>
     <ion-input [(ngModel)]="descripcion"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-label></ion-label>
-  <ion-datetime placeholder="DD/MM/YYYY" value=" {{fecha | date : 'dd/MM/YYYY' }}" [(ngModel)]="fecha"></ion-datetime>
+    <ion-icon name="calendar-outline"></ion-icon><ion-datetime placeholder="DD/MM/YYYY" value=" {{fecha | date : 'dd/MM/YYYY' }}" [(ngModel)]="fecha"></ion-datetime>
 <ion-input ></ion-input>
   </ion-item>
   
@@ -50,22 +50,10 @@
 
   <ion-button color="success"  (click)="guardarIngresos()">guardar Ingresos<ion-icon name="save"></ion-icon></ion-button>
 
-  <ion-list>
-    <ion-item>
-      <ion-label color="danger">NOMBRE:</ion-label>
-      <ion-label color="danger">DESCRIPCION </ion-label>
-      <ion-label color="danger">FECHA</ion-label>
-      <ion-label color="danger">VALOR </ion-label> 
-     
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item *ngFor="let gasto of gastos">
-      <ion-label>{{gasto.nombre}}</ion-label>
-      <ion-label>{{gasto.descripcion}}</ion-label>
-      <ion-label>{{gasto.fecha }}</ion-label>
-      <ion-label>{{gasto.valor}}</ion-label> 
-     
-    </ion-item>
-  </ion-list>
+  <ion-button color="danger"  routerLink="/listgastos">LISTA GASTOS<ion-icon name="clipboard"></ion-icon></ion-button>
+
+  <ion-button color="success"  routerLink="/listingresos"> LISTA INGRESOS<ion-icon name="clipboard"></ion-icon></ion-button>
+  
+
+  
 </ion-content>
