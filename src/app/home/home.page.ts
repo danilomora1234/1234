@@ -20,7 +20,7 @@ export class HomePage {
   visibleEditar: boolean=false;
 
 
-  constructor(public alertController: AlertController, loadingController: LoadingController,) {}
+  constructor(public alertController: AlertController, loadingController: LoadingController) {}
   
   /*async noDatos(){const alert = await this.alertController.create({//salta una ventana para avisar que no haz ingrsado datos
     cssClass: 'my-custom-class',

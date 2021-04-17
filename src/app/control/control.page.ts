@@ -104,7 +104,7 @@ async ngOnInit(){
     
     await this.storage.set('gastos',this.gastos)
    
-    this.sinDatos=true;
+    
     //limpiando datos
     this.valor="";
     this.fecha="";
@@ -128,22 +128,47 @@ async ngOnInit(){
       })
       await this.storage.set('ingresos',this.ingresos)
 
-      this.sinDatos=true;
+      
     //limpiando datos
-    this.valor1="";
-    this.fecha1="";
-    this.nombre1="";
-    this.descripcion1="";
+    this.valor="";
+    this.fecha="";
+    this.nombre="";
+    this.descripcion="";
     console.log(this.ingresos);
     console.log('INGRESOS');
       
     }
 
-    async borrarDatos(){
-      this.ingresos=[]
-      await this.storage.remove('ingresos')
-      this.gastos=[]
-      await this.storage.remove('gastos')
-      console.log('borrando')
+    
+    async borrarDatos() {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: '¡AVISO!',
+        message: 'SE ELIMINARAN TODOS LOS DATOS',
+        buttons: [
+          {
+            text: 'CANCELAR',
+            role: 'cancel',
+            cssClass: 'tertiary',
+            handler: (blah) => {
+              console.log('CANCELANDO ELIMINACION');
+            }
+          }, {
+            text: 'ELIMINAR',
+            cssClass: 'danger',
+            handler: () => {
+            
+                this.ingresos=[]
+                this.storage.remove('ingresos')
+                this.gastos=[]
+                this.storage.remove('gastos')
+             
+              console.log('ELIMINANDO DATOS....');
+            }
+          }
+        ]
+      });
+  
+      await alert.present();
     }
 }
