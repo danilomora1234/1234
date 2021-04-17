@@ -28,7 +28,7 @@ export class PARCIALPage implements OnInit {
     onButtonPress(symbolo) {
       console.log(symbolo);
   
-      if (isNumber(symbolo)) {
+      if (Number(symbolo)) {
         console.log("es un numero");
         if (this.nuevovalor)
           this.valor = "" + symbolo;
