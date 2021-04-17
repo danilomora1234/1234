@@ -1,26 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-button color="warning" routerLink="/control"><ion-icon name="arrow-back-outline"></ion-icon></ion-button><ion-title>LISTA DE INGRESOS</ion-title>
+  <ion-toolbar color="success">
+    <ion-button routerLink="/control"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>INGRESOS
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-label color="success">NOMBRE</ion-label>
-      <ion-label color="success">DESC</ion-label>
-      <ion-label color="success">FECHA</ion-label>
-      <ion-label color="success">VALOR </ion-label> 
-     
-    </ion-item>
-  </ion-list>
-  <ion-list>
     <ion-item *ngFor="let ingreso of ingresos">
-      <ion-label>{{ingreso.nombre  }}</ion-label>
-      <ion-label>{{ingreso.descripcion  }}</ion-label>
-      <ion-label>{{ingreso.fecha   }}</ion-label>
-      <ion-label>{{ingreso.valor  }}</ion-label> 
-     
+      <ion-label color="tertiary">NOMBRE:{{ingreso.nombre}}
+      <ion-label color="dark">DESCRIPCION: {{ingreso.descripcion}}</ion-label>
+      <ion-label color="dark">FECHA: {{ingreso.fecha}}</ion-label>
+      <ion-label color="dark">VALOR: {{ingreso.valor}}</ion-label>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

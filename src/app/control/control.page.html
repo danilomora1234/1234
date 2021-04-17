@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-button color="warning" routerLink="/home"><ion-icon name="home"></ion-icon></ion-button>CONTROL
+  <ion-toolbar color="primary">
+    <ion-button color="secondary" routerLink="/home"><ion-icon name="home"></ion-icon></ion-button>CONTROL
   </ion-toolbar>
 </ion-header>
 
@@ -53,33 +53,31 @@
   <ion-button color="danger"  routerLink="/listgastos">LISTA GASTOS<ion-icon name="clipboard"></ion-icon></ion-button>
 
   <ion-button color="success"  routerLink="/listingresos"> LISTA INGRESOS<ion-icon name="clipboard"></ion-icon></ion-button>
-  
+  <ion-button color="warning"  (click)="borrarDatos()">BORRAR LOS DATOS<ion-icon name="clipboard"></ion-icon></ion-button>
+
   <ion-list>
     <ion-item>
-      <ion-label color="warning">NOMBRE</ion-label>
-      <ion-label color="warning">DESC</ion-label>
-      <ion-label color="warning">FECHA</ion-label>
-      <ion-label color="warning">VALOR </ion-label> 
-     
+      <ion-label color="dark">INGRESOS Y GASTOS REPORTADOS</ion-label>
     </ion-item>
   </ion-list>
+
   <ion-list>
     <ion-item *ngFor="let ingreso of ingresos">
-      <ion-label>{{ingreso.nombre  }}</ion-label>
-      <ion-label>{{ingreso.descripcion  }}</ion-label>
-      <ion-label>{{ingreso.fecha   }}</ion-label>
-      <ion-label>{{ingreso.valor  }}</ion-label> 
-     
+      <ion-label color="tertiary">NOMBRE:{{ingreso.nombre}}
+      <ion-label color="dark">DESCRIPCION: {{ingreso.descripcion}}</ion-label>
+      <ion-label color="dark">FECHA: {{ingreso.fecha}}</ion-label>
+      <ion-label color="dark">VALOR: {{ingreso.valor}}</ion-label>
+      </ion-label>
+      
     </ion-item>
-  </ion-list>
-  <ion-list>
     <ion-item *ngFor="let gasto of gastos">
-      <ion-label>{{gasto.nombre  }}</ion-label>
-      <ion-label>{{gasto.descripcion  }}</ion-label>
-      <ion-label>{{gasto.fecha   }}</ion-label>
-      <ion-label>{{gasto.valor  }}</ion-label> 
-     
+      <ion-label color="danger">NOMBRE:{{gasto.nombre}}
+      <ion-label color="dark">DESCRIPCION: {{gasto.descripcion}}</ion-label>
+      <ion-label color="dark">FECHA: {{gasto.fecha}}</ion-label>
+      <ion-label color="dark">VALOR: {{gasto.valor}}</ion-label>
+      </ion-label>
     </ion-item>
   </ion-list>
+  
   
 </ion-content>

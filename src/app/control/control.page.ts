@@ -139,5 +139,11 @@ async ngOnInit(){
       
     }
 
-    
+    async borrarDatos(){
+      this.ingresos=[]
+      await this.storage.remove('ingresos')
+      this.gastos=[]
+      await this.storage.remove('gastos')
+      console.log('borrando')
+    }
 }
