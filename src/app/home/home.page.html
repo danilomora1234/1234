@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="secondary">
-    <ion-title>
-      <ion-icon name="home"></ion-icon> INICIO 
+    <ion-title color="dark">
+      <ion-icon name="home" color="dark"></ion-icon> INICIO 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
   <ion-button color="danger" routerLink="/nosotros">¿quienes somos?<ion-icon name="help-circle"></ion-icon></ion-button>
 
   <ion-button shape="round" color="success" routerLink="/contacto" ><ion-icon name="information-circle-outline"></ion-icon>CONTACTOS</ion-button>
@@ -21,22 +21,22 @@
 
   <ion-button color="warning" routerLink="/control"><ion-icon name="stats-chart-outline"></ion-icon>CONTROL</ion-button>
 
-  <ion-item>
+  <ion-item color="dark">
     <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>NOMBRES:</ion-label>
     <ion-input [(ngModel)]="nombre"></ion-input>
   </ion-item>
   
-  <ion-item>
+  <ion-item color="dark">
     <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>APELLIDOS:</ion-label>
     <ion-input [(ngModel)]="apellido"></ion-input>
   </ion-item>
   
-  <ion-item>
+  <ion-item color="dark">
     <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>CELULAR:</ion-label>
     <ion-input [(ngModel)]="celular"></ion-input>
   </ion-item>
   
-  <ion-item>
+  <ion-item color="dark">
     <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>MAIL:</ion-label>
     <ion-input [(ngModel)]="email"></ion-input>
     

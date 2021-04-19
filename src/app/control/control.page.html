@@ -6,7 +6,7 @@
 
 
      
-<ion-content>
+<ion-content padding color="">
 
   <!--<p> INGRESOS Y GASTOS</p>
 
@@ -24,23 +24,23 @@
   </ion-list> -->
   
   
-  <ion-item>
+  <ion-item color="dark">
     <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>NOMBRE:</ion-label>
     <ion-input [(ngModel)]="nombre"></ion-input>
   </ion-item>
   
-  <ion-item>
+  <ion-item color="dark">
     <ion-label position="floating"><ion-icon name="reader-outline"></ion-icon>DESCRIPCION:</ion-label>
     <ion-input [(ngModel)]="descripcion"></ion-input>
   </ion-item>
   
-  <ion-item>
+  <ion-item color="dark">
     <ion-label></ion-label>
     <ion-icon name="calendar-outline"></ion-icon><ion-datetime placeholder="DD/MM/YYYY" value=" {{fecha | date : 'dd/MM/YYYY' }}" [(ngModel)]="fecha"></ion-datetime>
 <ion-input ></ion-input>
   </ion-item>
   
-  <ion-item>
+  <ion-item color="dark">
     <ion-label position="floating"><ion-icon name="cash-outline"></ion-icon>VALOR:</ion-label>
     <ion-input [(ngModel)]="valor"></ion-input>
     
@@ -61,15 +61,15 @@
     </ion-item>
   </ion-list>
 
-  <ion-list>
-    <ion-item *ngFor="let ingreso of ingresos">
+  <ion-list >
+    <ion-item *ngFor="let ingreso of ingresos" >
       <ion-label color="tertiary">NOMBRE:{{ingreso.nombre}}
       <ion-label color="dark">DESCRIPCION: {{ingreso.descripcion}}</ion-label>
       <ion-label color="dark">FECHA: {{ingreso.fecha}}</ion-label>
       <ion-label color="dark">VALOR: {{ingreso.valor}}</ion-label>
       </ion-label>
       
-    </ion-item>
+    </ion-item >
     <ion-item *ngFor="let gasto of gastos">
       <ion-label color="danger">NOMBRE:{{gasto.nombre}}
       <ion-label color="dark">DESCRIPCION: {{gasto.descripcion}}</ion-label>
