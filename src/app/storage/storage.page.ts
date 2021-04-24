@@ -9,7 +9,7 @@ import { Storage } from '@ionic/storage-angular';
 export class StoragePage implements OnInit {
   
   textoAlmacenado= '';
-  
+  textIngresosGastos=[];
   constructor(private storage: Storage) { }
 
   async ngOnInit() {

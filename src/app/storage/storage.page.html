@@ -12,5 +12,15 @@
   <ion-textarea [(ngModel)]="textoAlmacenado" placeholder="escribe algo"></ion-textarea>
   <ion-button (click)="guardarDato()" color="success">guardar</ion-button>
 
+  
 </ion-item>
+<ion-button (click)="cambiarTexto('ingresos')">
+  Ingresos
+</ion-button>
+
+<ion-button (click)="cambiarTexto('Gastos')">
+  Gastos
+</ion-button>
+
+el texto seleccionado es:{{textIngresosGastos}}
 </ion-content>

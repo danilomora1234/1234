@@ -51,6 +51,11 @@ const routes: Routes = [
     path: 'listingresos',
     loadChildren: () => import('./listingresos/listingresos.module').then( m => m.ListingresosPageModule)
   },
+  {
+    path: 'triqui',
+    loadChildren: () => import('./triqui/triqui.module').then( m => m.TriquiPageModule)
+  },
+  
 ];
 
 @NgModule({
