@@ -52,9 +52,10 @@ const routes: Routes = [
     loadChildren: () => import('./listingresos/listingresos.module').then( m => m.ListingresosPageModule)
   },
   {
-    path: 'triqui',
-    loadChildren: () => import('./triqui/triqui.module').then( m => m.TriquiPageModule)
+    path: 'ppacial2',
+    loadChildren: () => import('./ppacial2/ppacial2.module').then( m => m.Ppacial2PageModule)
   },
+  
   
 ];
 

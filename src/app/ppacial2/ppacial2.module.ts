@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TriquiPageRoutingModule } from './triqui-routing.module';
+import { Ppacial2PageRoutingModule } from './ppacial2-routing.module';
 
-import { TriquiPage } from './triqui.page';
+import { Ppacial2Page } from './ppacial2.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TriquiPageRoutingModule
+    Ppacial2PageRoutingModule
   ],
-  declarations: [TriquiPage]
+  declarations: [Ppacial2Page]
 })
-export class TriquiPageModule {}
+export class Ppacial2PageModule {}
