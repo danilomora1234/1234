@@ -1,4 +1,4 @@
-<ion-header>
+<!--<ion-header>
   <ion-toolbar color="primary">
     <ion-title color="dark">
       <ion-icon name="arrow-back" routerLink="/home" color="dark"></ion-icon> JUEGO TRIQUI
@@ -6,6 +6,65 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="ppacial2">
+  <ion-list>
+    {{jugador1}}
+  </ion-list>
+  <ion-grid class="board" >
+    <ion-row>
+      <ion-col width-33  >
+        <ion-button (click)="clickboton()" expand="full" shape="round" size="large" color="tertiary">{{this.X}}</ion-button>
+      </ion-col>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full" shape="round" size="large">{{this.X}}</ion-button>
+      </ion-col>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full" shape="round"  size="large" color="tertiary">{{this.X}}</ion-button>
+      </ion-col>
+    </ion-row>
 
+    <ion-row>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full" shape="round" size="large">{{this.X}}</ion-button></ion-col>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full"  shape="round" color="tertiary" size="large">{{this.X}}</ion-button></ion-col>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full" shape="round" size="large">{{this.X}}</ion-button></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full" shape="round" color="tertiary" size="large">{{this.X}}</ion-button></ion-col>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full" shape="round" size="large">{{this.X}}</ion-button></ion-col>
+      <ion-col width-33><ion-button (click)="clickboton()" expand="full" shape="round" color="tertiary" size="large">{{this.X}}</ion-button></ion-col>
+    </ion-row>
+</ion-grid>
+
+
+</ion-content>-->
+<ion-header>
+<ion-toolbar color="primary">
+  <ion-title color="dark">
+    <ion-icon name="arrow-back" routerLink="/home" color="dark"></ion-icon> JUEGO TRIQUI TRACA
+  </ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-item>JUGADOR: {{ player }} </ion-item>
+
+<h2 *ngIf="winner">
+  EL JUGADOR {{ winner }} GANO EL JUEGO!
+  
+</h2>
+<h2 *ngIf="winner">
+   {{ empate }} 
+  
+</h2>
+<ion-content>
+  
+
+<ion-button color="warning" expand="full" (click)="nuevoJuego()">¿NUEVO JUEGO?</ion-button>
+
+<ion-grid>
+    <ion-row 
+        *ngFor="let val of squares; let i = index" 
+        [value]="val"
+        (click)="makeMove(i)"> 
+
+    </ion-row>
+  </ion-grid>
 </ion-content>
