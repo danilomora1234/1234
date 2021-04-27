@@ -1,4 +1,4 @@
-<!--<ion-header>
+<ion-header>
   <ion-toolbar color="primary">
     <ion-title color="dark">
       <ion-icon name="arrow-back" routerLink="/home" color="dark"></ion-icon> JUEGO TRIQUI
@@ -35,33 +35,4 @@
 </ion-grid>
 
 
-</ion-content>-->
-<ion-header>
-<ion-toolbar color="primary">
-  <ion-title color="dark">
-    <ion-icon name="arrow-back" routerLink="/home" color="dark"></ion-icon> JUEGO TRIQUI TRACA
-  </ion-title>
-</ion-toolbar>
-</ion-header>
-
-<ion-item>JUGADOR: {{ jugador }} </ion-item>
-
-<h2 *ngIf="ganador">
- RESULTADO {{ ganador }}
-  
-</h2>
-
-<ion-content>
-  
-
-<ion-button color="warning" expand="full" (click)="nuevoJuego()">¿NUEVO JUEGO?</ion-button>
-
-<ion-grid>
-    <ion-row 
-        *ngFor="let val of espacios; let i = index" 
-        [value]="val"
-        (click)="moviMiento(i)"> {{this.espacios[i]}} 
-
-    </ion-row>
-  </ion-grid>
 </ion-content>
