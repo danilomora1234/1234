@@ -55,10 +55,6 @@ const routes: Routes = [
     path: 'ppacial2',
     loadChildren: () => import('./ppacial2/ppacial2.module').then( m => m.Ppacial2PageModule)
   },
-  {
-    path: 'parcial2',
-    loadChildren: () => import('./parcial2/parcial2.module').then( m => m.PARCIAL2PageModule)
-  },
   
   
 ];
